@@ -18,8 +18,33 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+<<<<<<< Updated upstream
         Debug.Log(groundedPlayer);
         groundedPlayer = controller.isGrounded;
+=======
+        
+        Debug.Log(groundedPlayer);
+        groundedPlayer = controller.isGrounded;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position,-(Vector3.up), out hit))
+        {
+            Debug.Log("Tocando"+ hit.distance);
+            if (hit.distance < 0.6)
+            {
+                groundedPlayer = true;
+            }
+            else
+            {
+                groundedPlayer = false;
+            }
+        }
+        else
+        {
+            Debug.Log("No");
+        }
+
+>>>>>>> Stashed changes
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
@@ -34,6 +59,10 @@ public class Player : MonoBehaviour
         }
 
         // Changes the height position of the player..
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         if (Input.GetButtonDown("Jump") && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
@@ -50,8 +79,22 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Debug.Log("tag");
+<<<<<<< Updated upstream
             lightController.GetComponent<LightController>().time+=5;
            
         } 
+=======
+            lightController.GetComponent<LightController>().time+= 5f;
+           
+        }
+
+        if (collision.gameObject.tag == "LessTime")
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("enemy");
+            lightController.GetComponent<LightController>().time -= 2.5f;
+
+        }
+>>>>>>> Stashed changes
     }
 }

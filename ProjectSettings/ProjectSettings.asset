@@ -3,8 +3,13 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
+<<<<<<< Updated upstream
   serializedVersion: 23
   productGUID: 91a733cb4b868114c8c49755a156e75f
+=======
+  serializedVersion: 22
+  productGUID: 51f9a06357d61d34aaf004a7719c19d8
+>>>>>>> Stashed changes
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +18,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< Updated upstream
   productName: Prototipo
+=======
+  productName: Prototipo 1.1
+>>>>>>> Stashed changes
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -42,8 +51,13 @@ PlayerSettings:
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
+<<<<<<< Updated upstream
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
+=======
+  defaultScreenWidth: 1024
+  defaultScreenHeight: 768
+>>>>>>> Stashed changes
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
@@ -125,7 +139,11 @@ PlayerSettings:
   stadiaTargetFramerate: 0
   vulkanNumSwapchainBuffers: 3
   vulkanEnableSetSRGBWrite: 0
+<<<<<<< Updated upstream
   vulkanEnablePreTransform: 1
+=======
+  vulkanEnablePreTransform: 0
+>>>>>>> Stashed changes
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   m_SupportedAspectRatios:
@@ -145,13 +163,19 @@ PlayerSettings:
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
+<<<<<<< Updated upstream
   enableOpenGLProfilerGPURecorders: 1
+=======
+>>>>>>> Stashed changes
   useHDRDisplay: 0
   D3DHDRBitDepth: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
+<<<<<<< Updated upstream
   resetResolutionOnWindowResize: 0
+=======
+>>>>>>> Stashed changes
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier: {}
@@ -161,7 +185,11 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
+<<<<<<< Updated upstream
   AndroidMinSdkVersion: 22
+=======
+  AndroidMinSdkVersion: 19
+>>>>>>> Stashed changes
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -217,7 +245,10 @@ PlayerSettings:
   iOSLaunchScreeniPadCustomStoryboardPath: 
   iOSDeviceRequirements: []
   iOSURLSchemes: []
+<<<<<<< Updated upstream
   macOSURLSchemes: []
+=======
+>>>>>>> Stashed changes
   iOSBackgroundModes: 0
   iOSMetalForceHardShadows: 0
   metalEditorSupport: 1
@@ -235,7 +266,11 @@ PlayerSettings:
   appleEnableProMotion: 0
   shaderPrecisionModel: 0
   clonedFromGUID: c0afd0d1d80e3634a9dac47e8a0426ea
+<<<<<<< Updated upstream
   templatePackageId: com.unity.template.3d@8.1.0
+=======
+  templatePackageId: com.unity.template.3d@5.0.4
+>>>>>>> Stashed changes
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
@@ -269,6 +304,7 @@ PlayerSettings:
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
   m_BuildTargetIcons: []
+<<<<<<< Updated upstream
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: iPhone
     m_Icons:
@@ -459,6 +495,9 @@ PlayerSettings:
       m_Height: 36
       m_Kind: 0
       m_SubKind: 
+=======
+  m_BuildTargetPlatformIcons: []
+>>>>>>> Stashed changes
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
     m_StaticBatching: 1
@@ -510,7 +549,11 @@ PlayerSettings:
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer
     m_APIs: 150000000b000000
+<<<<<<< Updated upstream
     m_Automatic: 1
+=======
+    m_Automatic: 0
+>>>>>>> Stashed changes
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
     m_Automatic: 1
@@ -534,6 +577,7 @@ PlayerSettings:
     Android: 1
     iPhone: 1
     tvOS: 1
+<<<<<<< Updated upstream
   m_BuildTargetGroupLightmapEncodingQuality:
   - m_BuildTarget: Android
     m_EncodingQuality: 1
@@ -552,6 +596,11 @@ PlayerSettings:
   m_BuildTargetDefaultTextureCompressionFormat:
   - m_BuildTarget: Android
     m_Format: 3
+=======
+  m_BuildTargetGroupLightmapEncodingQuality: []
+  m_BuildTargetGroupLightmapSettings: []
+  m_BuildTargetNormalMapEncoding: []
+>>>>>>> Stashed changes
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -570,7 +619,10 @@ PlayerSettings:
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
   switchUseGOLDLinker: 0
+<<<<<<< Updated upstream
   switchLTOSetting: 0
+=======
+>>>>>>> Stashed changes
   switchApplicationID: 0x01004b9000490000
   switchNSODependencies: 
   switchTitleNames_0: 
@@ -701,9 +753,13 @@ PlayerSettings:
   switchPlayerConnectionEnabled: 1
   switchUseNewStyleFilepaths: 0
   switchUseMicroSleepForYield: 1
+<<<<<<< Updated upstream
   switchEnableRamDiskSupport: 0
   switchMicroSleepForYieldTime: 25
   switchRamDiskSpaceSize: 12
+=======
+  switchMicroSleepForYieldTime: 25
+>>>>>>> Stashed changes
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -774,6 +830,10 @@ PlayerSettings:
   ps4videoRecordingFeaturesUsed: 0
   ps4contentSearchFeaturesUsed: 0
   ps4CompatibilityPS5: 0
+<<<<<<< Updated upstream
+=======
+  ps4AllowPS5Detection: 0
+>>>>>>> Stashed changes
   ps4GPU800MHz: 1
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
@@ -808,6 +868,10 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
+<<<<<<< Updated upstream
+=======
+  useReferenceAssemblies: 1
+>>>>>>> Stashed changes
   enableRoslynAnalyzers: 1
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
@@ -817,8 +881,13 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
+<<<<<<< Updated upstream
   metroPackageName: Template3D
   metroPackageVersion: 1.0.0.0
+=======
+  metroPackageName: Template_3D
+  metroPackageVersion: 
+>>>>>>> Stashed changes
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -826,7 +895,11 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Template_3D
   wsaImages: {}
+<<<<<<< Updated upstream
   metroTileShortName: Prototipo
+=======
+  metroTileShortName: 
+>>>>>>> Stashed changes
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -843,7 +916,10 @@ PlayerSettings:
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
+<<<<<<< Updated upstream
   vcxProjDefaultLanguage: 
+=======
+>>>>>>> Stashed changes
   XboxOneProductId: 
   XboxOneUpdateKey: 
   XboxOneSandboxId: 
@@ -894,6 +970,9 @@ PlayerSettings:
   organizationId: 
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
+<<<<<<< Updated upstream
   playerDataPath: 
   forceSRGBBlit: 1
+=======
+>>>>>>> Stashed changes
   virtualTexturingSupportEnabled: 0
