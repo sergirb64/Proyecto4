@@ -8,11 +8,14 @@ public class RotateRoom : MonoBehaviour
     public GameObject _player;
     public GameObject _room;
     public float _speed = 100f;
+    public Quaternion _cameraRotation;
+    public Vector3 _cameraPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        _cameraPosition = Camera.main.transform.position;
+        _cameraRotation = Camera.main.transform.rotation;
     }
 
     // Update is called once per frame
@@ -29,7 +32,7 @@ public class RotateRoom : MonoBehaviour
         if (moveHor != 0 || moveVer != 0)
         {
             Vector3 newVector = new Vector3(-moveVer, -moveHor, 0);
-            _room.transform.Rotate(newVector * Time.deltaTime * _speed);
+            Camera.main.transform.RotateAround(_room.transform.position, newVector, _speed * Time.deltaTime);
         }
     }
 
@@ -47,13 +50,11 @@ public class RotateRoom : MonoBehaviour
         if (Physics.Raycast(_player.transform.position, transform.TransformDirection(-dir), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Hit: " + hit.collider.gameObject.name);
             hit.collider.gameObject.SetActive(false);
         }
         else
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("Did not Hit");
         }
 
     }
@@ -61,7 +62,9 @@ public class RotateRoom : MonoBehaviour
     #region Buttons
     public void ResetRotation()
     {
-        _room.transform.SetPositionAndRotation(new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 1));
+        print("Hola");
+        Camera.main.transform.rotation = _cameraRotation;
+        Camera.main.transform.position = _cameraPosition;
     }
     #endregion
 }
