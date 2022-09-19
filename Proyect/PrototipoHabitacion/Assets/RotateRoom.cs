@@ -59,12 +59,12 @@ public class RotateRoom : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            forward = 1f;
-        }else if (Input.GetKeyDown(KeyCode.E))
-        {
-            back = 1f;
+            Camera.main.transform.Translate(Camera.main.transform.forward);
         }
-
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            Camera.main.transform.Translate(-Camera.main.transform.forward);
+        }
 
 
 
