@@ -67,12 +67,14 @@ public class Controller : MonoBehaviour
             _off.gameObject.SetActive(false);
             _on.gameObject.SetActive(true);
             _characterController.enabled = false;
+            _agent.enabled = true;
         }
         else
         {
             _off.gameObject.SetActive(true);
             _on.gameObject.SetActive(false);
             _characterController.enabled = true;
+            _agent.enabled = false;
         }
         _isClikMove = isClick;
     }

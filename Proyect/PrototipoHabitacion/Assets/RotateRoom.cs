@@ -50,7 +50,8 @@ public class RotateRoom : MonoBehaviour
 
         if (moveHor != 0 || moveVer != 0)
         {
-            Vector3 newVector = new Vector3(0, -moveHor, -moveVer);
+            Vector3 newVector = new Vector3(0, moveHor, moveVer);
+            print("Vector: " + newVector);
             Camera.main.transform.RotateAround(_room.transform.position, newVector, _speed * Time.deltaTime);
         }
     }
