@@ -27,8 +27,27 @@ public class RotateRoom : MonoBehaviour
 
     private void InputController()
     {
-        float moveHor = Input.GetAxis("Horizontal");
-        float moveVer = Input.GetAxis("Vertical");
+        //Rotation Controller
+        float moveHor = 0;
+        float moveVer = 0;
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            moveHor = -1f;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            moveHor = 1f;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            moveVer = -1f;
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            moveVer = 1f;
+        }
+
         if (moveHor != 0 || moveVer != 0)
         {
             Vector3 newVector = new Vector3(-moveVer, -moveHor, 0);
@@ -39,7 +58,7 @@ public class RotateRoom : MonoBehaviour
     private void WallController()
     {
 
-        foreach(GameObject wall in _walls)
+        foreach (GameObject wall in _walls)
         {
             wall.SetActive(true);
         }
@@ -49,8 +68,11 @@ public class RotateRoom : MonoBehaviour
 
         if (Physics.Raycast(_player.transform.position, transform.TransformDirection(-dir), out hit, Mathf.Infinity))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            hit.collider.gameObject.SetActive(false);
+            Debug.DrawRay(_player.transform.position, transform.TransformDirection(-dir), Color.yellow);
+            if(hit.collider.gameObject.tag == "Wall")
+            {
+                hit.collider.gameObject.SetActive(false);
+            }
         }
         else
         {
@@ -62,7 +84,6 @@ public class RotateRoom : MonoBehaviour
     #region Buttons
     public void ResetRotation()
     {
-        print("Hola");
         Camera.main.transform.rotation = _cameraRotation;
         Camera.main.transform.position = _cameraPosition;
     }
