@@ -30,6 +30,8 @@ public class RotateRoom : MonoBehaviour
         //Rotation Controller
         float moveHor = 0;
         float moveVer = 0;
+        float forward = 0;
+        float back = 0;
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -54,6 +56,18 @@ public class RotateRoom : MonoBehaviour
             print("Vector: " + newVector);
             Camera.main.transform.RotateAround(_room.transform.position, newVector, _speed * Time.deltaTime);
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            forward = 1f;
+        }else if (Input.GetKeyDown(KeyCode.E))
+        {
+            back = 1f;
+        }
+
+
+
+
     }
 
     private void WallController()
@@ -70,7 +84,7 @@ public class RotateRoom : MonoBehaviour
         if (Physics.Raycast(_player.transform.position, transform.TransformDirection(-dir), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(_player.transform.position, transform.TransformDirection(-dir), Color.yellow);
-            if(hit.collider.gameObject.tag == "Wall")
+            if(hit.collider.gameObject.tag == "Wall" || hit.collider.gameObject.tag == "IgnoreCam")
             {
                 hit.collider.gameObject.SetActive(false);
             }
