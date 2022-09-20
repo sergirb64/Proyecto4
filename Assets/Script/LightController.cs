@@ -8,7 +8,7 @@ public class LightController : MonoBehaviour
     public GameObject lightGame;
     float intensity;
     float StartTime;
-    bool vivo=true;
+   public bool vivo=true;
     
     void Start()
     {
