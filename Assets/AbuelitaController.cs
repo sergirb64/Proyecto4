@@ -40,22 +40,28 @@ public class AbuelitaController : MonoBehaviour
         dialogoAbuelaText.text = "Ay filliño, si pudieras traerme un poco de sal, estaría agradecida";
         yield return new WaitForSeconds(5.0f);
         dialogoVecinoText.text = "Por supuestisimo que si, espere aqui un momento";
+        StartCoroutine(TimeToHideDialogoVecino());
         vecino.Play("VecinoSeVaACocina");
         yield return new WaitForSeconds(6.0f);//Vecino se va
         dialogoAbuelaText.text = "<Jesús, ves lo repelente que es? esque no lo aguanto. A ver si encuentro algo por aquí para 'evitar más dolores de cabeza'>";
         puedeAndar = true;
         yield return new WaitForSeconds(5.0f);
+        StartCoroutine(TimeToHideDialogoAbuela());
     }
     IEnumerator FinalDialogos()
     {
+        dialogoAbuela.SetActive(true);
         dialogoAbuelaText.text = "Ay mi rey no te preocupes, cocino sin sal que me viene mejor";
         vecino.Play("VecinoVaACuadro");
         yield return new WaitForSeconds(3.0f);//Vecino se acerca
+        dialogoVecino.SetActive(true);
         dialogoVecinoText.text = "Pero ya se la traigo vecinita querida";
         yield return new WaitForSeconds(1.5f);
         dialogoAbuelaText.text = "Que si que si, que no te aguanto. Ups lo he dicho en voz alta?. Hasta luego cierro y me voy";
         dialogoVecinoText.text = "Pero :(";
         misionCumplida = true;
+        StartCoroutine(TimeToHideDialogoVecino());
+        StartCoroutine(TimeToHideDialogoAbuela());
     }
     // Update is called once per frame
     void Update()
@@ -110,5 +116,15 @@ public class AbuelitaController : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         _martilloAdded.SetActive(false);
+    }
+    IEnumerator TimeToHideDialogoVecino()
+    {
+        yield return new WaitForSeconds(2.0f);
+        dialogoVecino.SetActive(false);
+    }  
+    IEnumerator TimeToHideDialogoAbuela()
+    {
+        yield return new WaitForSeconds(2.0f);
+        dialogoAbuela.SetActive(false);
     }
 }
