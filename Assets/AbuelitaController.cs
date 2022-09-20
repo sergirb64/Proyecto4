@@ -13,6 +13,10 @@ public class AbuelitaController : MonoBehaviour
     public TMP_Text dialogoVecinoText;
     public GameObject dialogoAbuela;
     public TMP_Text dialogoAbuelaText;
+
+    [Header("Animations")]
+    public Animator vecino;
+    public Animator cuadro;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,7 @@ public class AbuelitaController : MonoBehaviour
         dialogoAbuelaText.text = "Ay filliño, si pudieras traerme un poco de sal, estaría agradecida";
         yield return new WaitForSeconds(5.0f);
         dialogoVecinoText.text = "Por supuestisimo que si, espere aqui un momento";
+        vecino.Play("VecinoSeVaACocina");
         yield return new WaitForSeconds(6.0f);//Vecino se va
         dialogoAbuelaText.text = "<Jesús, ves lo repelente que es? esque no lo aguanto. A ver si encuentro algo por aquí para 'evitar más dolores de cabeza'>";
         puedeAndar = true;
@@ -44,6 +49,7 @@ public class AbuelitaController : MonoBehaviour
     IEnumerator FinalDialogos()
     {
         dialogoAbuelaText.text = "Ay mi rey no te preocupes, cocino sin sal que me viene mejor";
+        vecino.Play("VecinoVaACuadro");
         yield return new WaitForSeconds(3.0f);//Vecino se acerca
         dialogoVecinoText.text = "Pero ya se la traigo vecinita querida";
         yield return new WaitForSeconds(1.5f);
@@ -72,13 +78,13 @@ public class AbuelitaController : MonoBehaviour
             {
                 if (_tieneMartillo)
                 {
-                    //Animacion Martillo sacando Cuelgafacil
+                    dialogoAbuelaText.text = "jo jo jo veras tu que agradable chorprecha";
                     Debug.Log("Sacando cuadro");
                     StartCoroutine(FinalDialogos());
                 }
                 else
                 {
-                    //Dialogo, no tengo nada para sacarlo
+                    dialogoAbuelaText.text = "No tengo nada para sacar el cuadro";
                     Debug.Log("No tengo nada para sacarllo");
                 }
             }
@@ -96,7 +102,8 @@ public class AbuelitaController : MonoBehaviour
             other.gameObject.SetActive(false);
         }else if (other.gameObject.CompareTag("Puerta") && misionCumplida)
         {
-            //Animacion cuadro se cae y mata al vecino
+            vecino.Play("VecinoMuere");
+            cuadro.Play("CuadroCae");
         }
     }
     IEnumerator TimeToHideMartillo()
