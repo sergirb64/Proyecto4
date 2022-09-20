@@ -6,6 +6,8 @@ TagManager:
   tags:
   - shoot
   - enemigo
+  - CrashMode
+  - ground
   layers:
   - Default
   - TransparentFX

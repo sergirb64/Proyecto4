@@ -6,7 +6,7 @@ public class DISPARO : MonoBehaviour
 
     public Rigidbody projectile;
 
-    public float speed = 20;
+    public float speed =50f;
 
 
 

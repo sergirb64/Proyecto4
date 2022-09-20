@@ -3,11 +3,12 @@ using System.Collections;
 
 public class DISPAROENEMIGO : MonoBehaviour
 {
-    private float nextActionTime = 0.0f;
-    public float period = 0.5f;
+    private float nextActionTime = 2.0f;
+    public float period = 8.0f;
     public Rigidbody projectile;
+    public float tiempoVida = 0f;
+    public float speed = 50;
 
-    public float speed = 20;
 
 
 
@@ -31,6 +32,12 @@ public class DISPAROENEMIGO : MonoBehaviour
 
             instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
 
+
+
         }
+
     }
+
 }
+   
+
