@@ -49,10 +49,14 @@ public class Controller : MonoBehaviour
             {
                 Ray myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if(Physics.Raycast(myRay, out hit, 100, _canBeClicked))
+                
+                if(Physics.Raycast(myRay, out hit, 100))
                 {
-                    print(hit.collider.gameObject.name);
-                    _agent.SetDestination(hit.point);                
+                    if(hit.collider.name == "Suelo")
+                    {
+                        print("Hit: " + hit.collider.name);
+                        _agent.SetDestination(hit.point);
+                    }
                 }
             }
         }
