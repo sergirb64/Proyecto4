@@ -57,6 +57,7 @@ public class AbuelitaController : MonoBehaviour
         dialogoVecino.SetActive(true);
         dialogoVecinoText.text = "Pero ya se la traigo vecinita querida";
         yield return new WaitForSeconds(1.5f);
+        dialogoAbuela.SetActive(true);
         dialogoAbuelaText.text = "Que si que si, que no te aguanto. Ups lo he dicho en voz alta?. Hasta luego cierro y me voy";
         dialogoVecinoText.text = "Pero :(";
         misionCumplida = true;
@@ -110,6 +111,7 @@ public class AbuelitaController : MonoBehaviour
         {
             vecino.Play("VecinoMuere");
             cuadro.Play("CuadroCae");
+            gameObject.SetActive(false);
         }
     }
     IEnumerator TimeToHideMartillo()
