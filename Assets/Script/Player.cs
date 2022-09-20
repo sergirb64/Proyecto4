@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
     public  LightController lightController;
+    public Text texto;
     Vector3 posIni;
     private void Start()
     {
@@ -24,7 +26,8 @@ public class Player : MonoBehaviour
         if (lightController.time<=0)
         {
             transform.position = posIni;
-            lightController.time = 10;
+            StartCoroutine(Wait());
+            
         }
         else
         {
@@ -99,5 +102,20 @@ public class Player : MonoBehaviour
             //Destroy(this);
             lightController.GetComponent<LightController>().time -= 10f;
         }
+        if (collision.gameObject.tag == "fin")
+        {
+            
+             texto.text = "Victoria";
+           
+        }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3f);
+    
+        lightController.time = 10;
+        lightController.vivo = true;
+       
     }
 }
