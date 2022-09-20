@@ -54,7 +54,7 @@ public class AbuelitaController : MonoBehaviour
             _martilloAdded.SetActive(true);
             _tieneMartillo = true;
             Debug.Log("Tengo martillo" + _tieneMartillo);
-            TimeToHideMartillo();
+            StartCoroutine(TimeToHideMartillo());
             other.gameObject.SetActive(false);
         }
     }
