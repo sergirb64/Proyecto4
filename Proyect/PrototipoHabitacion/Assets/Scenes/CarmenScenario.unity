@@ -1834,8 +1834,8 @@ GameObject:
   - component: {fileID: 1243079999}
   - component: {fileID: 1243079998}
   m_Layer: 0
-  m_Name: Cilinder
-  m_TagString: Untagged
+  m_Name: Botton
+  m_TagString: CanClick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1968,8 +1968,8 @@ GameObject:
   - component: {fileID: 1376867340}
   - component: {fileID: 1376867339}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Botton
+  m_TagString: CanClick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3056,6 +3056,10 @@ PrefabInstance:
     - target: {fileID: -9104743629595162712, guid: c31f7b5bb806c264083972f60bd7b5cc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8764077512085610462, guid: c31f7b5bb806c264083972f60bd7b5cc, type: 3}
+      propertyPath: m_Name
+      value: Ventilador
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c31f7b5bb806c264083972f60bd7b5cc, type: 3}
       propertyPath: m_RootOrder
