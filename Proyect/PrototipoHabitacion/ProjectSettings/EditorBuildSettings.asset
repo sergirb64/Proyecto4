@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CarmenScenario.unity
+    guid: 690c649ecc884394bafe8983b2fcd159
   m_configObjects: {}
