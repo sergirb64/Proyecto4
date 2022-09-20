@@ -17,6 +17,7 @@ public class Controller : MonoBehaviour
     public GameObject _pivot;
     private CharacterController _characterController;
     public float _speed = 5f;
+    public GameObject _ventilador;
 
     // Start is called before the first frame update
     void Start()
@@ -52,10 +53,14 @@ public class Controller : MonoBehaviour
                 
                 if(Physics.Raycast(myRay, out hit, 100))
                 {
-                    if(hit.collider.name == "Suelo")
+                    if(hit.collider.name == "Suelo" || hit.collider.tag == "CanClick")
                     {
                         print("Hit: " + hit.collider.name);
                         _agent.SetDestination(hit.point);
+                        if (hit.collider.gameObject.name == "Button")
+                        {
+                            _ventilador.GetComponent<Ventilador>().StartAnim();
+                        }
                     }
                 }
             }
