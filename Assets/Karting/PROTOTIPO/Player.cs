@@ -6,7 +6,8 @@ public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private int life = 3;
+    public static int life = 5;
+    public static bool playerDeath = false;
     public Camera camera1;
     public Camera camera2;
     public Rigidbody rb;
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour
     {
         if (life <= 0)
         {
-            Destroy(this.gameObject);
+            playerDeath = true;
 
         }
         if (Input.GetKey(KeyCode.Q))
@@ -51,7 +52,6 @@ public class Player : MonoBehaviour
     {
         if (col.gameObject.tag == "enemigo")
         {
-            Destroy(this.gameObject);
             life = life - 1;
         }
         
