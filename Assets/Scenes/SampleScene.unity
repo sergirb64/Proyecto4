@@ -692,12 +692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   humano: 1
-  correctPosition: 0
-  toPosition: {x: 0, y: 0, z: 0}
   storySelector: {fileID: 760157531}
   personaje: {fileID: 3404802118865797008, guid: 697554f8bdaaacd4f9545e4882dd8c92, type: 3}
   rectTransform: {fileID: 460119191}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &460119197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,12 +1451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   humano: 1
-  correctPosition: 0
-  toPosition: {x: 0, y: 0, z: 0}
   storySelector: {fileID: 760157531}
   personaje: {fileID: 433535534742528989, guid: 2c8c5583c7876114caf3b82efdb1bc90, type: 3}
   rectTransform: {fileID: 1172410133}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1172410139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,12 +1997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   humano: 0
-  correctPosition: 0
-  toPosition: {x: 0, y: 0, z: 0}
   storySelector: {fileID: 760157531}
   personaje: {fileID: 5828576723530861310, guid: b0a21c36004197a4ca826ec066b6819a, type: 3}
   rectTransform: {fileID: 1589307904}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1589307910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2353,12 +2344,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   humano: 0
-  correctPosition: 0
-  toPosition: {x: 0, y: 0, z: 0}
   storySelector: {fileID: 760157531}
   personaje: {fileID: 3323277051632452372, guid: 17d94b58772d2694dbe1e7292c888161, type: 3}
   rectTransform: {fileID: 1822464893}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1822464899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2526,12 +2514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   humano: 1
-  correctPosition: 0
-  toPosition: {x: 0, y: 0, z: 0}
   storySelector: {fileID: 760157531}
   personaje: {fileID: 5222999210061220495, guid: d5be1b2ab3ab23342ad4c78784b70e40, type: 3}
   rectTransform: {fileID: 1946148861}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1946148867
 MonoBehaviour:
   m_ObjectHideFlags: 0
