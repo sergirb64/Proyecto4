@@ -6,6 +6,7 @@ public class GridController : MonoBehaviour
 {
     public GameObject _selectedArea;
     public bool _isActive;
+    public GameController _gc;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class GridController : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
             Debug.Log("hit");
-            _selectedArea.transform.position = hit.point;
+            _selectedArea.transform.position = new Vector3(Mathf.Round(hit.point.x), Mathf.Round(hit.point.y), Mathf.Round(hit.point.z));
         }
 
     }
@@ -34,6 +35,7 @@ public class GridController : MonoBehaviour
     public void ActiveGridController()
     {
         _isActive = !_isActive;
+        _gc.GetComponent<GameController>().SetBuild(_isActive);
     }
 
 }
