@@ -73,10 +73,11 @@ public class Piece : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_isFall && collision.gameObject.tag == "Piece")
+        if (_isFall && (collision.gameObject.tag == "Piece" || collision.gameObject.tag == "Ground"))
         {
             _isFall = false;
             _rigidbody.isKinematic = true;
+            transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
             _tetrisController.CreatePiece();
         }
     }
