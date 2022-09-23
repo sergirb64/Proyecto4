@@ -9,10 +9,12 @@ public class Piece : MonoBehaviour
     private int _lastX = 0;
     private Rigidbody _rigidbody;
     private TetrisController _tetrisController;
+    private Vector3 _startPosition;
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -27,11 +29,17 @@ public class Piece : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                transform.position += Vector3.left;
+                if(transform.position.x > _startPosition.x - 1)
+                {
+                    transform.position += Vector3.left;
+                }
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                transform.position += Vector3.right;
+                if (transform.position.x < _startPosition.x + 1)
+                {
+                    transform.position += Vector3.right;
+                }
             }
             //ROTATION
             if (Input.GetKeyDown(KeyCode.A))
@@ -65,7 +73,7 @@ public class Piece : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_isFall)
+        if (_isFall && collision.gameObject.tag == "Piece")
         {
             _isFall = false;
             _rigidbody.isKinematic = true;

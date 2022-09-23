@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: T2_Building Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ce7b72a801ce0444a548c7c5c52b55e, type: 3}
+      propertyPath: m_TagString
+      value: Piece
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce7b72a801ce0444a548c7c5c52b55e, type: 3}
 --- !u!1 &31288212277787997 stripped
