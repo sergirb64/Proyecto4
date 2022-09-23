@@ -1882,7 +1882,7 @@ GameObject:
   - component: {fileID: 1982165975}
   - component: {fileID: 1982165978}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Suelo
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
