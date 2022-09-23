@@ -20,7 +20,6 @@ public class TetrisController : MonoBehaviour
     public Buildings _buildings;
 
     public GameObject _startPosition;
-    private bool _runningTetris = false;
     private Build _currentBuild;
 
     // Start is called before the first frame update
@@ -58,7 +57,6 @@ public class TetrisController : MonoBehaviour
         _currentBuild.gameObject.transform.position = _gridController._selectedArea.transform.position;
         _startPosition.transform.position = _gridController._selectedArea.transform.position;
         _startPosition.transform.position = new Vector3(_startPosition.transform.position.x, 8, _startPosition.transform.position.z);
-        _runningTetris = true;
         CreatePiece();
     }
 
@@ -70,7 +68,7 @@ public class TetrisController : MonoBehaviour
         return null;           // if nothing is selected return null
     }
 
-    private void CreatePiece()
+    public void CreatePiece()
     {
         switch (_buildings)
         {
@@ -78,6 +76,7 @@ public class TetrisController : MonoBehaviour
                 int randomPiece = Random.Range(0, _piezasCasa.Count);
                 GameObject newPiece = Instantiate(_piezasCasa[randomPiece], _currentBuild.transform);
                 newPiece.transform.position = _startPosition.transform.position;
+                newPiece.GetComponent<Piece>().SetTetrisController(this);
                 break;
         }
     }
