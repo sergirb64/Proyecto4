@@ -17,18 +17,19 @@ public class GridController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         _selectedArea.SetActive(_isActive);
-
-        RaycastHit hit;
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100))
+        if (_gc._gameState == GameController.GameState.Build)
         {
-            Debug.Log(hit.transform.name);
-            Debug.Log("hit");
-            _selectedArea.transform.position = new Vector3(Mathf.Round(hit.point.x), Mathf.Round(hit.point.y), Mathf.Round(hit.point.z));
+
+            RaycastHit hit;
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                _selectedArea.transform.position = new Vector3(Mathf.Round(hit.point.x), Mathf.Round(hit.point.y), Mathf.Round(hit.point.z));
+            }
         }
+
 
     }
 
