@@ -48,3 +48,4 @@ MonoBehaviour:
   _currentOcupation: 0
   _name: Casa
   _pieces: []
+  _citizen: {fileID: 1792285707163179524, guid: 40f88c64b6b39074db3671b4428c2690, type: 3}

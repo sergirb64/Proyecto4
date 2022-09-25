@@ -5,9 +5,18 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
+
+    //STATS
+    public int _population;
+    public int _materials;
+    public int _workPlaces;
+    public int _workers;
+
     //UI
     public TextMeshProUGUI _populationText;
     public TextMeshProUGUI _materialsText;
+    public TextMeshProUGUI _workText;
+    public TextMeshProUGUI _workersText;
 
     public TetrisController _tetris;
     public enum GameState
@@ -18,10 +27,6 @@ public class GameController : MonoBehaviour
     }
 
     public GameState _gameState = GameState.Zone;
-
-    //STATS
-    public int _population;
-    public int _materials;
 
 
     // Start is called before the first frame update
@@ -94,10 +99,18 @@ public class GameController : MonoBehaviour
         UpdateUI();
     }
 
+    public void AddWorkPlaces(int added)
+    {
+        _workPlaces += added;
+        UpdateUI();
+    }
+
     public void UpdateUI()
     {
         _materialsText.text = _materials.ToString();
         _populationText.text = _population.ToString();
+        _workText.text = _workPlaces.ToString();
+        _workersText.text = _workers.ToString();
     }
 
 }

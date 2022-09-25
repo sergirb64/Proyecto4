@@ -74,14 +74,22 @@ public class TetrisController : MonoBehaviour
     public void CreatePiece()
     {
         _maxPieces--;
-        if( _maxPieces != 0)
+        if (_maxPieces != 0)
         {
             _gameController.UseMaterials(5);
+            int randomPiece;
+            GameObject newPiece;
             switch (_buildings)
             {
                 case Buildings.Casa:
-                    int randomPiece = Random.Range(0, _piezasCasa.Count);
-                    GameObject newPiece = Instantiate(_piezasCasa[randomPiece], _currentBuild.transform);
+                    randomPiece = Random.Range(0, _piezasCasa.Count);
+                    newPiece = Instantiate(_piezasCasa[randomPiece], _currentBuild.transform);
+                    newPiece.transform.position = _startPosition.transform.position;
+                    newPiece.GetComponent<Piece>().SetTetrisController(this);
+                    break;
+                case Buildings.Trabajo:
+                    randomPiece = Random.Range(0, _piezasTrabajo.Count);
+                    newPiece = Instantiate(_piezasTrabajo[randomPiece], _currentBuild.transform);
                     newPiece.transform.position = _startPosition.transform.position;
                     newPiece.GetComponent<Piece>().SetTetrisController(this);
                     break;
@@ -89,9 +97,18 @@ public class TetrisController : MonoBehaviour
         }
         else
         {
-            _currentBuild.SetOcupation(4);
             _gridController.ActiveGridController();
-            _gameController.CalculatePopulation();
+            switch (_buildings)
+            {
+                case Buildings.Casa:
+                    _currentBuild.SetOcupation(4);
+                    _gameController.CalculatePopulation();
+                    _currentBuild.GetComponent<Casa>().SpawnCitizens();
+                    break;
+                case Buildings.Trabajo:
+                    _gameController.AddWorkPlaces(20);
+                    break;
+            }
         }
 
     }

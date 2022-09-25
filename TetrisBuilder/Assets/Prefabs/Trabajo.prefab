@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df112d2445e977f4c893a33f53d12a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxOcupation: 0
+  _maxOcupation: 20
   _currentOcupation: 0
   _name: Trabajo
+  _pieces: []

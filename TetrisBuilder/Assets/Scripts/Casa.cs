@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Casa : Build
 {
+    public GameObject _citizen;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +16,13 @@ public class Casa : Build
     {
         
     }
+
+    public void SpawnCitizens()
+    {
+        for (int i = 0; i < _currentOcupation; i++)
+        {
+            GameObject newCitizen = Instantiate(_citizen);
+        }
+    }
+
 }
