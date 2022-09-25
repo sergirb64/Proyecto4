@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 745657112}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1320,6 +1320,7 @@ MonoBehaviour:
   _materialsText: {fileID: 1645360657}
   _workText: {fileID: 2089818337}
   _workersText: {fileID: 930621948}
+  _nextMaterialUpdate: 0
   _tetris: {fileID: 2025695252}
   _gameState: 1
 --- !u!1 &818332296
