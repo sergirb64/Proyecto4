@@ -1100,9 +1100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _populationText: {fileID: 1892459800}
+  _materialsText: {fileID: 0}
   _tetris: {fileID: 2025695252}
   _gameState: 1
   _population: 0
+  _materials: 40
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,9 +1810,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '10
-
-'
+  m_text: 8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

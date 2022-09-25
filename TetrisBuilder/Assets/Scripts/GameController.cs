@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
     //UI
     public TextMeshProUGUI _populationText;
+    public TextMeshProUGUI _materialsText;
 
     public TetrisController _tetris;
     public enum GameState
@@ -20,12 +21,13 @@ public class GameController : MonoBehaviour
 
     //STATS
     public int _population;
+    public int _materials;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -77,7 +79,25 @@ public class GameController : MonoBehaviour
             currentPopulation += casa[i].GetComponent<Casa>().GetOcupation();
         }
         _population = currentPopulation;
-        _populationText.text = currentPopulation.ToString();
+        UpdateUI();
+    }
+
+    public void UseMaterials(int used)
+    {
+        _materials -= used;
+        UpdateUI();
+    }
+
+    public void AddMaterials(int added)
+    {
+        _materials += added;
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        _materialsText.text = _materials.ToString();
+        _populationText.text = _population.ToString();
     }
 
 }

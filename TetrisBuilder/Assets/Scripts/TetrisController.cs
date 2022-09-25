@@ -76,6 +76,7 @@ public class TetrisController : MonoBehaviour
         _maxPieces--;
         if( _maxPieces != 0)
         {
+            _gameController.UseMaterials(5);
             switch (_buildings)
             {
                 case Buildings.Casa:
