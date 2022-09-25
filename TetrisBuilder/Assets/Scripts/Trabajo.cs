@@ -14,6 +14,6 @@ public class Trabajo : Build
     // Update is called once per frame
     void Update()
     {
-        
+        _materialGenerated = _currentOcupation;
     }
 }

@@ -38,4 +38,8 @@ public class Build : MonoBehaviour
     {
         return _currentOcupation;
     }
+    public int GetMaxOcupation()
+    {
+        return _maxOcupation;
+    }
 }

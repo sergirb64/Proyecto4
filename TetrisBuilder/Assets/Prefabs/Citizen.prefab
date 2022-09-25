@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1792285707163179521}
   - component: {fileID: 1792285707163179526}
   - component: {fileID: 1792285707163179527}
+  - component: {fileID: 8502604069583856328}
   m_Layer: 0
   m_Name: Citizen
   m_TagString: Untagged
@@ -97,3 +98,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8502604069583856328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792285707163179524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67061212e767d264f90b9e4abe4d625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _state: 2
