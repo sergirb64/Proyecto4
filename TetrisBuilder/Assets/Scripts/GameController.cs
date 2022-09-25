@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI _workText;
     public TextMeshProUGUI _workersText;
 
+    public float _nextMaterialUpdate = 0;
+
     public TetrisController _tetris;
     public enum GameState
     {
@@ -50,6 +52,13 @@ public class GameController : MonoBehaviour
             default:
                 break;
         }
+
+        if (Time.realtimeSinceStartup >= _nextMaterialUpdate)
+        {
+            _nextMaterialUpdate = Time.realtimeSinceStartup + 5f;
+            UpdateGenerate();
+        }
+
     }
 
     public void SetBuild(bool value)
@@ -111,6 +120,19 @@ public class GameController : MonoBehaviour
         _populationText.text = _population.ToString();
         _workText.text = _workPlaces.ToString();
         _workersText.text = _workers.ToString();
+    }
+
+    private void UpdateGenerate()
+    {
+        GameObject[] workplaces = GameObject.FindGameObjectsWithTag("Trabajo");
+        int materialGenerated = 0;
+
+        for (int i = 0; i < workplaces.Length; i++)
+        {
+            materialGenerated += workplaces[i].GetComponent<Trabajo>()._materialGenerated;
+        }
+        _materials += materialGenerated;
+        UpdateUI();
     }
 
 }
