@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    //UI
+    public TextMeshProUGUI _populationText;
+
     public TetrisController _tetris;
     public enum GameState
     {
@@ -13,6 +17,10 @@ public class GameController : MonoBehaviour
     }
 
     public GameState _gameState = GameState.Zone;
+
+    //STATS
+    public int _population;
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +66,18 @@ public class GameController : MonoBehaviour
             Camera.main.GetComponent<CameraController>().SwitchCameraMode(CameraController.CameraMode.Tetris);
             _tetris.StartTetris();
         }
+    }
+
+    public void CalculatePopulation()
+    {
+        int currentPopulation = 0;
+        GameObject[] casa = GameObject.FindGameObjectsWithTag("Casa");
+        for (int i = 0; i < casa.Length; i++)
+        {
+            currentPopulation += casa[i].GetComponent<Casa>().GetOcupation();
+        }
+        _population = currentPopulation;
+        _populationText.text = currentPopulation.ToString();
     }
 
 }

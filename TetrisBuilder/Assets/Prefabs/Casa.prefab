@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1419854321694294155}
   m_Layer: 0
   m_Name: Casa
-  m_TagString: Untagged
+  m_TagString: Casa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0c907e741b52a4f9ad98746006aebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxOcupation: 0
+  _maxOcupation: 4
   _currentOcupation: 0
   _name: Casa
+  _pieces: []

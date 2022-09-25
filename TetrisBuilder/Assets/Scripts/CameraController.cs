@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        InputController();
     }
 
     public void SwitchCameraMode(CameraMode newMode)
@@ -39,5 +39,24 @@ public class CameraController : MonoBehaviour
                 break;
         }
 
+    }
+
+    private void InputController()
+    {
+        switch (_mode)
+        {
+            case CameraMode.Movement:
+                InputMoveController();
+                break;
+        }
+    }
+
+    private void InputMoveController()
+    {
+        float moveHor = Input.GetAxis("Horizontal");
+        if(moveHor != 0)
+        {
+            transform.Translate(new Vector3(moveHor, 0, 0) * Time.deltaTime * 5);
+        }
     }
 }

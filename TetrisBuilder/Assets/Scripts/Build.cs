@@ -7,6 +7,7 @@ public class Build : MonoBehaviour
     public int _maxOcupation;
     public int _currentOcupation;
     public string _name;
+    public List<GameObject> _pieces;
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +19,23 @@ public class Build : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AddPiece(GameObject newPiece)
+    {
+        _pieces.Add(newPiece);
+    }
+
+    public void SetOcupation(int value)
+    {
+        if(value <= _maxOcupation)
+        {
+            _currentOcupation = value;
+        }
+    }
+
+    public int GetOcupation()
+    {
+        return _currentOcupation;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TetrisController : MonoBehaviour
 {
     public List<GameObject> _buildsList;
+    public GameController _gameController;
 
     public GridController _gridController;
     public GameObject _buildSelections;
@@ -21,6 +22,7 @@ public class TetrisController : MonoBehaviour
 
     public GameObject _startPosition;
     private Build _currentBuild;
+    private int _maxPieces = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class TetrisController : MonoBehaviour
     public void StartTetris()
     {
         Toggle toggle = GetSelectedToggle();
+        _maxPieces = 4;
         if (toggle != null)
         {
             switch (toggle.name)
@@ -70,15 +73,31 @@ public class TetrisController : MonoBehaviour
 
     public void CreatePiece()
     {
-        switch (_buildings)
+        _maxPieces--;
+        if( _maxPieces != 0)
         {
-            case Buildings.Casa:
-                int randomPiece = Random.Range(0, _piezasCasa.Count);
-                GameObject newPiece = Instantiate(_piezasCasa[randomPiece], _currentBuild.transform);
-                newPiece.transform.position = _startPosition.transform.position;
-                newPiece.GetComponent<Piece>().SetTetrisController(this);
-                break;
+            switch (_buildings)
+            {
+                case Buildings.Casa:
+                    int randomPiece = Random.Range(0, _piezasCasa.Count);
+                    GameObject newPiece = Instantiate(_piezasCasa[randomPiece], _currentBuild.transform);
+                    newPiece.transform.position = _startPosition.transform.position;
+                    newPiece.GetComponent<Piece>().SetTetrisController(this);
+                    break;
+            }
         }
+        else
+        {
+            _currentBuild.SetOcupation(4);
+            _gridController.ActiveGridController();
+            _gameController.CalculatePopulation();
+        }
+
+    }
+
+    public Build GetCurrentBuild()
+    {
+        return _currentBuild;
     }
 
 }
