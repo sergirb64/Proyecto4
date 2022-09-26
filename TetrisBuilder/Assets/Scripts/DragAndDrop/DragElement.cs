@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragElement : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField]
     private Canvas _canvas;
@@ -34,11 +34,4 @@ public class DragElement : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         _canvasGroup.blocksRaycasts = true;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-    }
-
-    public void OnDrop(PointerEventData eventData)
-    {
-    }
 }
