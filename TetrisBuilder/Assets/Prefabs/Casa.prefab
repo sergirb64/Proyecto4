@@ -48,4 +48,11 @@ MonoBehaviour:
   _currentOcupation: 0
   _name: Casa
   _pieces: []
-  _citizen: {fileID: 1792285707163179524, guid: 40f88c64b6b39074db3671b4428c2690, type: 3}
+  _citizenList:
+  - {fileID: 3801928427582162071, guid: 0a2d3539940aaf24884eb31c9e019abe, type: 3}
+  - {fileID: 6634358142870751174, guid: be0c20f7ffc9e9548b7393f455cc91a2, type: 3}
+  - {fileID: 6470068896759874071, guid: 53e60f9b4286a314b9820fc7dcbec14d, type: 3}
+  - {fileID: 1198521042570052880, guid: 2e50efd782222eb48adeed3f5d9230db, type: 3}
+  - {fileID: 2550169054866141755, guid: e98e114902102194daa803090a52218e, type: 3}
+  - {fileID: 6019847755140532158, guid: 8309eb2d02a885c40ba9a12eb9f57acd, type: 3}
+  - {fileID: 4742847900938644936, guid: d5efeabdaa5e9234fba2b8ef7f1b17d7, type: 3}

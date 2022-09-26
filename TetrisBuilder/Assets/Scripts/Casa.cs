@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Casa : Build
 {
-    public GameObject _citizen;
+    public List<GameObject> _citizenList;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,8 @@ public class Casa : Build
     {
         for (int i = 0; i < _currentOcupation; i++)
         {
-            GameObject newCitizen = Instantiate(_citizen);
+            int random = Random.Range(0, _citizenList.Count);
+            GameObject newCitizen = Instantiate(_citizenList[random]);
         }
     }
 
