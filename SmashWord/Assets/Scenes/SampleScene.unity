@@ -767,21 +767,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse ut metus.
-    Proin venenatis turpis sit amet ante consequat
-  - '  semper. Aenean nunc. Duis iaculis odio id lectus. Integer dapibus justo vitae
-    elit. Nunc luctus, tortor quis iaculis tempus, urna odio iaculis erat, imperdiet
-    lobortis orci lectus at eros. Ut a velit id odio malesuada nonummy.'
-  - ' Aenean cursus metus a purus. Duis dapibus odio a enim. Aliquam ut diam sed
-    nisl imperdiet gravida. Proin eget tellus ut ante dignissim dictum. Integer ut
-    justo quis eros feugiat convallis. Praesent massa. Pellentesque habitant morbi
-    tristique senectus et netus et malesuada fames ac turpis egestas.'
-  - ' Nulla egestas, nibh at malesuada nonummy, mi augue condimentum velit, a facilisis
-    tortor ipsum non diam. Nulla egestas, nibh at malesuada nonummy, mi augue condimentum
-    velit, a facilisis tortor ipsum non diam.'
+  - "Buler\xEDa, buler\xEDa, tan dentro del alma m\xEDa Es la sangre de la tierra
+    en que nac\xED Buler\xEDa, buler\xEDa, m\xE1s te quiero cada d\xEDa De ti vivo
+    enamorado desde que te vi"
+  - "Vengo, como loco por la vida Con el coraz\xF3n latiendo Porque sabe que t\xFA
+    est\xE1s"
+  - "Ay vida, que palpita de alegr\xEDa Que me embriaga el sentimiento Con tus besos
+    m\xE1s y m\xE1s"
+  - "Ah\xED tienes, el embrujo de la luna La belleza de una rosa Y la tibieza del
+    mar"
+  - "Ah\xED eres vino dulce de las uvas Donde bebo con tus labios De la fuente para
+    amar"
   dialogue: {fileID: 556642603}
   source: []
   highlightWords: []
+  CompletedWords: []
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
