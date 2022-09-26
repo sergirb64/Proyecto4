@@ -5,6 +5,7 @@ using System;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class TextControler : MonoBehaviour
 {
     public List<string> dialogues;
@@ -13,6 +14,7 @@ public class TextControler : MonoBehaviour
     public string[] source;
     public List<string> highlightWords;
     int count=0;
+    bool writing;
     //public class Counter
     //{
 
@@ -29,7 +31,7 @@ public class TextControler : MonoBehaviour
     void Start()
     {
         //dialogue.GetComponent<TextMeshPro>
-        Debug.Log(WordsFromText(dialogue.text));
+        Debug.Log(WordsFromText(dialogues[0]));
         dialogue.text = "";
     }
 
@@ -38,10 +40,12 @@ public class TextControler : MonoBehaviour
     {
         if (count <= source.Length-1)
         {
+            writing = true;
             if (count % 5 == 0)
             {
                 Debug.Log(source[count] + count);
-
+               // int random = Random.Range(count, 4f);
+               
                 dialogue.text += "<color=yellow>" + source[count] + "</color = yellow > ";
                 highlightWords.Add(source[count]);
                 count++;
@@ -52,10 +56,17 @@ public class TextControler : MonoBehaviour
                 count++;
             }
         }
-
-        if (highlightWords==null)
+        else
         {
+            writing = false;
+        }
 
+        if (highlightWords.Count==0&&writing==false)
+        {
+            Debug.Log("null");
+            dialogue.text = "";
+           dialogueCount++;
+            WordsFromText(dialogues[dialogueCount]);
         }
         
     }

@@ -22,8 +22,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-           playerText.DeactivateInputField();
+        //if (Input.GetKeyDown(KeyCode.T))
+        //   playerText.DeactivateInputField();
         if (Input.GetKeyDown(KeyCode.Return))
             if (textControler.GetComponent<TextControler>().highlightWords.Contains(playerText.text)==true)
 
@@ -41,6 +41,8 @@ public class Player : MonoBehaviour
         ;
         HealthBar(healthBar, maxLife, life);
         HealthBar(healthBarEnemy, maxEnemyLife, enemyLife);
+
+
     }
     void HealthBar(Image bar,float max, float current)
     {
