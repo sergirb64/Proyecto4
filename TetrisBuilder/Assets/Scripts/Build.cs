@@ -42,4 +42,9 @@ public class Build : MonoBehaviour
     {
         return _maxOcupation;
     }
+
+    public string GetData()
+    {
+        return _name;
+    }
 }

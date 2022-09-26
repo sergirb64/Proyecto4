@@ -18,6 +18,10 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI _workText;
     public TextMeshProUGUI _workersText;
 
+    //BUILDING DATA
+    public GameObject _dataPanel;
+    public TextMeshProUGUI _dataNameText;
+
     public float _nextMaterialUpdate = 0;
 
     public TetrisController _tetris;
@@ -46,6 +50,7 @@ public class GameController : MonoBehaviour
                 BuildController();
                 break;
             case GameState.Zone:
+                InputZoneController();
                 break;
             case GameState.Tetris:
                 break;
@@ -59,6 +64,24 @@ public class GameController : MonoBehaviour
             UpdateGenerate();
         }
 
+    }
+
+    private void InputZoneController()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            RaycastHit hit;
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if(hit.collider.gameObject.GetComponentInParent<Build>() != null)
+                {
+                    _dataPanel.SetActive(true);
+                    _dataNameText.text = hit.collider.gameObject.GetComponentInParent<Build>().GetData();
+                }
+            }
+        }
     }
 
     public void SetBuild(bool value)
@@ -135,4 +158,9 @@ public class GameController : MonoBehaviour
         UpdateUI();
     }
 
+
+    public void CloseDataPanel()
+    {
+        _dataPanel.SetActive(false);
+    }
 }
