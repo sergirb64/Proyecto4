@@ -77,7 +77,7 @@ public class Piece : MonoBehaviour
         {
             _isFall = false;
             _rigidbody.isKinematic = true;
-            transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
+            transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y+1), Mathf.Round(transform.position.z));
             _tetrisController.GetCurrentBuild().AddPiece(gameObject);
             _tetrisController.CreatePiece();
         }
