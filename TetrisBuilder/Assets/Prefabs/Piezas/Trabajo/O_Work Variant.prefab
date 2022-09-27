@@ -54,10 +54,10 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 39abbebe2f2833747bd55a35b932fd45, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 04734d5a108e24c42968dcf7da9def8e, type: 2}
+      objectReference: {fileID: 2100000, guid: 7b903cdbf9615874ea3bfa01503dc6ad, type: 2}
     - target: {fileID: 919132149155446097, guid: 39abbebe2f2833747bd55a35b932fd45, type: 3}
       propertyPath: m_Name
-      value: O_Building Variant
+      value: O_Work Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 39abbebe2f2833747bd55a35b932fd45, type: 3}
       propertyPath: m_TagString
