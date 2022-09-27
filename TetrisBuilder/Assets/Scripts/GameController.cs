@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class GameController : MonoBehaviour
     //BUILDING DATA
     public GameObject _dataPanel;
     public TextMeshProUGUI _dataNameText;
+    public GameObject _ocupationPanel;
+    public GameObject _citizenOcupation;
+    public List<Sprite> _citizenOcupationImage;
 
     public float _nextMaterialUpdate = 0;
 
@@ -78,7 +82,21 @@ public class GameController : MonoBehaviour
                 if(hit.collider.gameObject.GetComponentInParent<Build>() != null)
                 {
                     _dataPanel.SetActive(true);
-                    _dataNameText.text = hit.collider.gameObject.GetComponentInParent<Build>().GetData();
+                    Build currentBuild = hit.collider.gameObject.GetComponentInParent<Build>();
+                    _dataNameText.text = currentBuild.GetData();
+
+                    for (var i = _ocupationPanel.transform.childCount - 1; i >= 0; i--)
+                    {
+                        Object.Destroy(_ocupationPanel.transform.GetChild(i).gameObject);
+                    }
+
+                    for (int i = 0; i < currentBuild.GetOcupation(); i++)
+                    {
+                        GameObject newCitizen = Instantiate(_citizenOcupation);
+                        newCitizen.transform.SetParent(_ocupationPanel.GetComponent<RectTransform>());
+                        int random = Random.Range(0, _citizenOcupationImage.Count);
+                        newCitizen.GetComponent<Image>().sprite = _citizenOcupationImage[random];
+                    }
                 }
             }
         }
