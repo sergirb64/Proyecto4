@@ -16,15 +16,21 @@ public class StorySelector : MonoBehaviour
     public void InstantiateCharacters()
     {
         GameObject newHeroe = Instantiate(heroe,heroeSpawner);
-        newHeroe.AddComponent<CharacterController>();
+        //newHeroe.AddComponent<CharacterController>();
+        newHeroe.AddComponent<Heroe>();
+        newHeroe.AddComponent<Rigidbody>();
+        newHeroe.GetComponent<Rigidbody>().useGravity = false;
+        newHeroe.GetComponent<Rigidbody>().freezeRotation = true;
+        newHeroe.tag = "Player";
 
         GameObject newMascota = Instantiate(mascota, mascotaSpawner);
         newMascota.AddComponent<CompanionFollower>();
 
         GameObject newVillain= Instantiate(villano, villanoSpawner);
         newVillain.AddComponent<AIVillain>();
-
+        newVillain.tag = "Villano";
         GameObject newRescatado = Instantiate(rescatado, rescatadoSpawner);
         newRescatado.AddComponent<AIRescatado>();
+        newRescatado.tag = "Rescatado";
     }
 }

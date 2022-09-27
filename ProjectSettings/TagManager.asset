@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CharacterSlot
   - AnimalSlot
+  - Villano
+  - Ganar
+  - Rescatado
   layers:
   - Default
   - TransparentFX
