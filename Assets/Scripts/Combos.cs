@@ -8,6 +8,7 @@ public class Combos : MonoBehaviour
     new int a_value;
     new int d_value;
     new int w_value;
+    new int space_value;
 
     new int puntos;
 
@@ -18,6 +19,7 @@ public class Combos : MonoBehaviour
         a_value = 0;
         d_value = 0;
         w_value = 0;
+        space_value = 0;
 
         puntos = 0;
     }
@@ -25,7 +27,7 @@ public class Combos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        WhenPressed();
     }
 
     void WhenPressed()
@@ -46,14 +48,38 @@ public class Combos : MonoBehaviour
         {
             d_value++;
             Debug.Log("S = " + d_value);
+        } else if (Input.GetKeyDown("space"))
+        {
+            space_value++;
+        }
+        
+    }
+
+    void jump()
+    {
+        if (space_value == 3)
+        {
+            puntos = puntos + 25;
+
+            Debug.Log("Combo salto");
+        }
+    }
+
+    void Combo1()
+    {
+        if(a_value == 1 && d_value == 1 && w_value == 2 && s_value == 1)
+        {
+            puntos = puntos + 50;
+
+            Debug.Log("Combo 1");
         }
 
         
     }
 
-    void Combo1()
+    void Combo2()
     {
-        puntos = puntos + 50;
+        puntos = puntos + 100;
     }
 
 
