@@ -15,11 +15,7 @@ public class Combos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        s_value = 0;
-        a_value = 0;
-        d_value = 0;
-        w_value = 0;
-        space_value = 0;
+        ResetValues();
 
         puntos = 0;
     }
@@ -35,52 +31,56 @@ public class Combos : MonoBehaviour
         if (Input.GetKeyDown("s"))
         {
             s_value++;
-            Debug.Log("S = " + s_value);
         } else if (Input.GetKeyDown("a"))
         {
             a_value++;
-            Debug.Log("A = " + a_value);
         } else if (Input.GetKeyDown("w"))
         {
             w_value++;
-            Debug.Log("W = " + w_value);
         } else if (Input.GetKeyDown("d"))
         {
             d_value++;
-            Debug.Log("S = " + d_value);
         } else if (Input.GetKeyDown("space"))
         {
             space_value++;
         }
-        
-    }
 
-    void jump()
-    {
+        //Salto
         if (space_value == 3)
         {
             puntos = puntos + 25;
 
-            Debug.Log("Combo salto");
+            Debug.Log("COMBO SALTO + Puntos: " + puntos);
+            ResetValues();
         }
-    }
 
-    void Combo1()
-    {
-        if(a_value == 1 && d_value == 1 && w_value == 2 && s_value == 1)
+        //Combo 1
+        if (a_value == 1 && d_value == 1 && w_value == 2 && s_value == 1)
         {
             puntos = puntos + 50;
 
-            Debug.Log("Combo 1");
+            Debug.Log("COMBO PIRUETA 1 + Puntos: " + puntos);
+            ResetValues();
+            
         }
 
-        
+        //Combo 2
+        if (s_value == 3 && a_value == 1 && d_value == 1 && w_value == 3)
+        {
+            puntos = puntos + 100;
+
+            Debug.Log("COMBO PIRUETA 2 + Puntos: " + puntos);
+            ResetValues();
+        }
+
     }
 
-    void Combo2()
+    void ResetValues()
     {
-        puntos = puntos + 100;
+        a_value = 0;
+        s_value = 0;
+        d_value = 0;
+        w_value = 0;
+        space_value = 0;
     }
-
-
 }
