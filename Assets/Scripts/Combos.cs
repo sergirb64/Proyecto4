@@ -19,7 +19,6 @@ public class Combos : MonoBehaviour
     void Start()
     {
         ResetValues();
-
         puntos = 0;
     }
 
