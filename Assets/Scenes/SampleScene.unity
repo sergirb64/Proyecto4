@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 26656783}
   - component: {fileID: 26656787}
   - component: {fileID: 26656788}
+  - component: {fileID: 26656789}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -178,7 +179,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e7bd9ac3356d31e43bfc022996273313, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -254,6 +255,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sesibilidadRaton: 200
   velocity: 1
+--- !u!95 &26656789
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26656782}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c87da43a98202846b7c132bd5d2074d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &107666298
 GameObject:
   m_ObjectHideFlags: 0
