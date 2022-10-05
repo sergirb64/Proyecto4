@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Combos : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Combos : MonoBehaviour
     new int space_value;
 
     new int puntos;
+
+    public TMP_Text PuntosText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,7 @@ public class Combos : MonoBehaviour
     void Update()
     {
         WhenPressed();
+        PuntosText.text = "Puntos = " + puntos.ToString();
     }
 
     void WhenPressed()
