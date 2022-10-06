@@ -34,16 +34,24 @@ public class Combos : MonoBehaviour
         if (Input.GetKeyDown("s"))
         {
             s_value++;
-        } else if (Input.GetKeyDown("a"))
+        } 
+        
+        if (Input.GetKeyDown("a"))
         {
             a_value++;
-        } else if (Input.GetKeyDown("w"))
+        }
+        
+        if (Input.GetKeyDown("w"))
         {
             w_value++;
-        } else if (Input.GetKeyDown("d"))
+        }
+        
+        if (Input.GetKeyDown("d"))
         {
             d_value++;
-        } else if (Input.GetKeyDown("space"))
+        } 
+        
+        if (Input.GetKeyDown("space"))
         {
             space_value++;
         }
