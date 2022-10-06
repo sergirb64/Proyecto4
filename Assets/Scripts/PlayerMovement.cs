@@ -8,6 +8,7 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -608,6 +609,10 @@ public class PlayerMovement : MonoBehaviour
             }
 			Destroy(collision.gameObject);
 		}
+    }
+	public void Reintentar()
+    {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
