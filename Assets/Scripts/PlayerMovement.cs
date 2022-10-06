@@ -581,6 +581,7 @@ public class PlayerMovement : MonoBehaviour
 	#endregion
 
 	public int incrementations = 0;
+	public TMPro.TMP_Text moriste;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SizePlus"))
@@ -592,11 +593,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if (incrementations > 0)
             {
-				transform.localScale -= new Vector3(1.0f, 1.0f, 0.0f);
+                if (transform.localScale.x > 0)
+                {
+					transform.localScale -= new Vector3(1.0f, 1.0f, 0.0f);
+                }
+                else
+                {
+					transform.localScale -= new Vector3(-1.0f, 1.0f, 0.0f);
+				}
 			}
             else
             {
-				Debug.Log("DEAD");
+				moriste.gameObject.SetActive(true);
             }
 			Destroy(collision.gameObject);
 		}
