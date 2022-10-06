@@ -389,7 +389,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sesibilidadRaton: 200
-  velocity: 1
+  velocity: 5
+  velocityRot: 5
+  time: 0
+  vivo: 1
 --- !u!95 &26656789
 Animator:
   serializedVersion: 4
