@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/QuedateChiquito.unity
+    guid: fc835109519c41e44b59be6d0ecc0eae
   m_configObjects: {}

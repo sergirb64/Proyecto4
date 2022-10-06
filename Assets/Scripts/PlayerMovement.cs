@@ -588,7 +588,14 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("SizePlus"))
         {
 			incrementations++;
-			transform.localScale += new Vector3(1.0f,1.0f,0.0f);
+            if (transform.localScale.x > 0)
+            {
+				transform.localScale = new Vector3(1.0f,1.0f,1.0f);
+			}
+            else
+            {
+				transform.localScale += new Vector3(-0.5f, 0.5f, 0.5f);
+			}
 			Destroy(collision.gameObject);
         }else if (collision.gameObject.CompareTag("Hurth"))
         {
@@ -596,18 +603,24 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (transform.localScale.x > 0)
                 {
-					transform.localScale -= new Vector3(1.0f, 1.0f, 0.0f);
-                }
+					transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
+					incrementations--;
+
+				}
                 else
                 {
-					transform.localScale -= new Vector3(-1.0f, 1.0f, 0.0f);
+					transform.localScale -= new Vector3(-0.5f, 0.5f, 0.5f);
+					incrementations--;
 				}
 			}
             else
             {
 				moriste.gameObject.SetActive(true);
             }
-			Destroy(collision.gameObject);
+
+		}else if (collision.gameObject.CompareTag("Lava"))
+        {
+			moriste.gameObject.SetActive(true);
 		}
     }
 	public void Reintentar()
