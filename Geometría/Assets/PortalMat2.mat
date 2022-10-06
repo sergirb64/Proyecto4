@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PortalMat
+  m_Name: PortalMat2
   m_Shader: {fileID: 4800000, guid: 6344a0973cc8f804395aab5924ed2d6d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: bfc6c641066795d43a631d5138f8a04a, type: 2}
+        m_Texture: {fileID: 8400000, guid: ddd06ce1426b46047a2da898aab3df1e, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

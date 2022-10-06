@@ -8,6 +8,7 @@ public class CameraRotationç : MonoBehaviour
     public float _yPositionValue;
     public float _zPositionValue;
     public Camera _otherCamera;
+    public GameObject _otherPortal;
     //public GameObject _player;
     Rigidbody _playerRB;
 
@@ -25,7 +26,18 @@ public class CameraRotationç : MonoBehaviour
                                                               direction.eulerAngles.y + 180,
                                                               direction.eulerAngles.z);
 
+
+
         Vector3 distancia = transform.InverseTransformPoint(Camera.main.transform.position);
-        _otherCamera.transform.localPosition = -new Vector3(distancia.x, -distancia.y - 0.64f - _yPositionValue, distancia.z + _zPositionValue);
+        _otherCamera.transform.localPosition = new Vector3(distancia.x, -distancia.y - _yPositionValue, distancia.z + _zPositionValue);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Colisión");
+        if (other.gameObject.tag == "Player")
+        {
+            other.transform.position = new Vector3(_otherPortal.transform.position.x, _otherPortal.transform.position.y, _otherPortal.transform.position.z +  -1f);
+        }
     }
 }
