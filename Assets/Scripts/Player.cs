@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float sesibilidadRaton=120f;
-    public float velocity;
-    Vector3 moveInput;
+    public float sesibilidadRaton=200f;
+    public float velocity=10;
+    public float velocityRot=5;
+    Vector3 direction;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -18,10 +19,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         float mouse = Input.GetAxis("Mouse X") * Time.deltaTime * sesibilidadRaton;
+        float mouseRot = Input.GetAxis("Mouse X") * Time.deltaTime * velocityRot;
         transform.Rotate(0, mouse, 0);
-        moveInput = new Vector3(mouse, 0, 1);
-        rb.velocity = Vector3.forward * velocity*moveInput.sqrMagnitude;
-       // transform.Translate(Vector3.forward * Time.deltaTime+transform.position);
+        direction = new Vector3(mouseRot, 0, 1 * Time.deltaTime*velocity);
+        transform.Translate(direction);
        
+        //rb.velocity = Vector3.forward * velocity*direction.sqrMagnitude;
+
+        // transform.Translate(Vector3.forward * Time.deltaTime+transform.position);
+
     }
 }
