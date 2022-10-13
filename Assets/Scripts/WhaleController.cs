@@ -48,7 +48,7 @@ public class WhaleController : MonoBehaviour
 
     void MoveShip()
     {
-        _rb.AddRelativeForce(Vector3.forward * 500 * Time.deltaTime, ForceMode.Impulse);
+        _rb.AddRelativeForce(Vector3.forward * 5 * Time.deltaTime, ForceMode.Impulse);
     }
 
     public void setCurrentVelocity(int value)
