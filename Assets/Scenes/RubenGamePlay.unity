@@ -484,11 +484,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocity:
-  - 0
-  - 0
-  - 0
-  - 5
-  - 0
+  - 500
+  - 500
+  - 500
+  - 500
+  - 500
   _currentVelocity: 1
   _currentInc: 0
   _currentGiro: 0
