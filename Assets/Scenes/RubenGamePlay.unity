@@ -269,6 +269,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1542545632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5538295362368564542, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
+  m_PrefabInstance: {fileID: 1857771417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1542545637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542545632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c01fef111bddbe4782c34c4b4ecac4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turnSpeed: 60
+  _boostSpeed: 45
 --- !u!1001 &1857771417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,6 +302,18 @@ PrefabInstance:
     - target: {fileID: 411532145, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
       propertyPath: far clip plane
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857771420, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
+      propertyPath: _velGiro
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857771420, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857771420, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
+      propertyPath: _velRotation
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1857771421, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
       propertyPath: m_Constraints
