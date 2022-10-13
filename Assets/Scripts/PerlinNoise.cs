@@ -40,7 +40,7 @@ public class PerlinNoise : MonoBehaviour
         CalcNoise(true);
     }
 
-    void CalcNoise(bool isStart)
+    private void CalcNoise(bool isStart)
     {
 
         //X LIMIT
@@ -78,12 +78,13 @@ public class PerlinNoise : MonoBehaviour
             zLimitInf = _ship.transform.position.z - _range;
         }
 
-        for (int x = (int)xLimitInf; x < (int)xLimitSup; x++)
+        for (int x = (int)xLimitInf; x <= (int)xLimitSup; x += 10)
         {
-            for (int y = (int)yLimitInf; y < yLimitSup + _range; y++)
+            for (int y = (int)yLimitInf; y <= (int)yLimitSup; y += 10)
             {
-                for (int z = (int)zLimitInf; z < zLimitSup; z++)
+                for (int z = (int)zLimitInf; z <= (int)zLimitSup; z += 10)
                 {
+                    print("Hola!");
                     if (Perlin3D(x, y, z) <= _spawnRate)
                     {
                         GameObject newObject;
@@ -130,7 +131,7 @@ public class PerlinNoise : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || NeedUpdate())
         {
             UpdateAsteroids();
         }
@@ -138,9 +139,8 @@ public class PerlinNoise : MonoBehaviour
 
     bool NeedUpdate()
     {
-
         bool result = false;
-        /*
+
         //X LIMIT
         float xLimitSup = _lastPos.x + (_range / 2);
         float xLimitInf = _lastPos.x - (_range / 2);
@@ -153,7 +153,7 @@ public class PerlinNoise : MonoBehaviour
         Vector3 currentPos = _ship.transform.position;
         if (currentPos.x >= xLimitSup || currentPos.x <= xLimitInf || currentPos.y >= yLimitSup || currentPos.y <= yLimitInf || currentPos.z >= zLimitSup || currentPos.z <= zLimitInf)
             result = true;
-        */
+
 
         if (Time.realtimeSinceStartup >= _nextUpdate)
         {

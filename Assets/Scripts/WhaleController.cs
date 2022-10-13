@@ -28,27 +28,31 @@ public class WhaleController : MonoBehaviour
     void Update()
     {
 
-        UpdateControllData();
+        UpdateInputs();
         CalculeGiro();
         MoveShip();
     }
 
-    void UpdateControllData()
+    void UpdateInputs()
     {
         _currentVelocity = 3;
-        _currentInc = Input.GetAxis("Vertical");
-        _giro = Input.GetAxis("Horizontal");
+        _currentInc = Input.GetAxisRaw("Vertical");
+        _currentGiro = Input.GetAxisRaw("Horizontal");
     }
 
     void CalculeGiro()
     {
-        //Quaternion newQ = new Quaternion(transform.rotation.x, transform.rotation.y + Client.Instance._controllData.currentInc, transform.rotation.z + Client.Instance._controllData.giro, 1);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, newQ, Time.deltaTime * _velRotation);
+
+        Quaternion newQ = new Quaternion(transform.rotation.x - (_currentInc * 0.01f), transform.rotation.y + (_currentGiro * 0.01f), transform.rotation.z, 1);
+        transform.rotation = Quaternion.Lerp(transform.rotation, newQ, Time.deltaTime * _velRotation * 25f);
+        //transform.rotation = newQ;
+
     }
 
     void MoveShip()
     {
-        _rb.AddRelativeForce(Vector3.forward * 0 * Time.deltaTime, ForceMode.Impulse);
+        _rb.AddRelativeForce(Vector3.forward * 5 * Time.deltaTime, ForceMode.Impulse);
+        _rb.velocity = transform.forward * 100 * Time.deltaTime;
     }
 
     public void setCurrentVelocity(int value)
