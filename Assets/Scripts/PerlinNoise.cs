@@ -87,14 +87,8 @@ public class PerlinNoise : MonoBehaviour
                     if (Perlin3D(x, y, z) <= _spawnRate)
                     {
                         GameObject newObject;
-                        if (isChargeRock())
-                        {
-                            newObject = Instantiate(_ChargeRock, transform);
-                        }
-                        else
-                        {
-                            newObject = Instantiate(_asteroid, transform);
-                        }
+
+                        newObject = Instantiate(_asteroid, transform);
                         newObject.transform.position = new Vector3(x, y, z);
                     }
                 }
@@ -136,10 +130,10 @@ public class PerlinNoise : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space) || NeedUpdate())
-        //{
-        //    UpdateAsteroids();
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            UpdateAsteroids();
+        }
     }
 
     bool NeedUpdate()
@@ -171,11 +165,11 @@ public class PerlinNoise : MonoBehaviour
 
     void DestroyAllAsteroids()
     {
-        //GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
-        //foreach (GameObject currentAsteroid in asteroids)
-        //{
-        //    Destroy(currentAsteroid);
-        //}
+        GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
+        foreach (GameObject currentAsteroid in asteroids)
+        {
+            Destroy(currentAsteroid);
+        }
     }
 
     void UpdateAsteroids()
