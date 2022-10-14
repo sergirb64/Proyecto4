@@ -42,11 +42,20 @@ public class SolarSystem : SpaceObject
         {
             int randomIndex = _rng.Next(0, _planets.Count);
             GameObject newPlanet = Instantiate(_planets[randomIndex], transform);
+            newPlanet.transform.localScale = new Vector3(50, 50, 50);
         }
     }
 
     public void SetRng(System.Random value)
     {
         _rng = value;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }

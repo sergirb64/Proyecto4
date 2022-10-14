@@ -251,7 +251,7 @@ MonoBehaviour:
   _seed: 500
   scale: 0.025
   _range: 100
-  _spawnRate: 0.35
+  _spawnRate: 0.25
   _lastPos: {x: 0, y: 0, z: 0}
   _chanceChargeRock: 0
   _timeToUpdate: 20
@@ -315,8 +315,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 411532145, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
+      propertyPath: field of view
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 411532145, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
       propertyPath: far clip plane
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 411532145, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
+      propertyPath: near clip plane
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1857771420, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
       propertyPath: _velGiro

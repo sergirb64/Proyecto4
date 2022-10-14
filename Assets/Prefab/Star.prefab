@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2612370887977718003}
   - component: {fileID: 348547691188075535}
   - component: {fileID: 7680221724234524493}
+  - component: {fileID: 2503474133104535730}
   m_Layer: 0
   m_Name: Star
   m_TagString: SpaceObject
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1080835885584424746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4879076386124387874}
@@ -94,10 +95,10 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080835885584424746}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7680221724234524493
 MonoBehaviour:
@@ -122,6 +123,22 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 8a90c8a1bdac511469ac28a2bd8fcecd, type: 3}
   - {fileID: 919132149155446097, guid: 997844ac6cff0ba4193f18fa3f75e2da, type: 3}
   - {fileID: 919132149155446097, guid: c737360927250fd42a1ca790fad6a541, type: 3}
+--- !u!54 &2503474133104535730
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080835885584424746}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &7235779079671582346
 GameObject:
   m_ObjectHideFlags: 0
