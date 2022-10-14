@@ -11,6 +11,11 @@ public class PerlinNoise : MonoBehaviour
      0.3
      */
 
+    public enum SpaceObjects
+    {
+        SolarSystem,
+        BlackHole
+    }
 
     private GameObject _ship;
     [Header("References")]
@@ -18,12 +23,14 @@ public class PerlinNoise : MonoBehaviour
     public GameObject _ChargeRock;
 
     [Header("Game Parameters")]
+    public int _seed = 0;
     public float scale = 1.0F;
     public int _range;
     public float _spawnRate;
     public Vector3 _lastPos;
     public float _chanceChargeRock;
     public float _timeToUpdate;
+    public int _rangeMultiplier;
 
     float _nextUpdate;
     System.Random _rng;
@@ -36,7 +43,7 @@ public class PerlinNoise : MonoBehaviour
     public void StartGenerateWorld()
     {
         _nextUpdate = Time.realtimeSinceStartup + _timeToUpdate;
-        _rng = new System.Random(005);
+        _rng = new System.Random(_seed);
         CalcNoise();
     }
 
@@ -63,11 +70,11 @@ public class PerlinNoise : MonoBehaviour
         zLimitSup = CalculateLimit((int)_ship.transform.position.z, true);
         zLimitInf = CalculateLimit((int)_ship.transform.position.z, false);
 
-        for (int x = (int)xLimitInf; x <= (int)xLimitSup; x += 10)
+        for (int x = (int)xLimitInf; x <= (int)xLimitSup; x += _rangeMultiplier)
         {
-            for (int y = (int)yLimitInf; y <= (int)yLimitSup; y += 10)
+            for (int y = (int)yLimitInf; y <= (int)yLimitSup; y += _rangeMultiplier)
             {
-                for (int z = (int)zLimitInf; z <= (int)zLimitSup; z += 10)
+                for (int z = (int)zLimitInf; z <= (int)zLimitSup; z += _rangeMultiplier)
                 {
                     if (Perlin3D(x, y, z) <= _spawnRate)
                     {
@@ -75,6 +82,8 @@ public class PerlinNoise : MonoBehaviour
 
                         newObject = Instantiate(_spaceObject, transform);
                         newObject.transform.position = new Vector3(x, y, z);
+                        newObject.GetComponent<SolarSystem>().SetRng(_rng);
+                        newObject.GetComponent<SolarSystem>().InitValues();
                     }
                 }
             }
@@ -88,7 +97,7 @@ public class PerlinNoise : MonoBehaviour
         if (isAdd)
         {
             limit = value + _range;
-            while (limit % 10 != 0)
+            while (limit % _rangeMultiplier != 0)
             {
                 limit++;
             }
@@ -96,7 +105,7 @@ public class PerlinNoise : MonoBehaviour
         else
         {
             limit = value - _range;
-            while (limit % 10 != 0)
+            while (limit % _rangeMultiplier != 0)
             {
                 limit--;
             }

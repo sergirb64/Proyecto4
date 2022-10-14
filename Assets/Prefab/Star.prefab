@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1678582270435778594}
   - component: {fileID: 2612370887977718003}
   - component: {fileID: 348547691188075535}
+  - component: {fileID: 7680221724234524493}
   m_Layer: 0
   m_Name: Star
   m_TagString: SpaceObject
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1080835885584424746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4879076386124387874}
@@ -98,6 +99,29 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7680221724234524493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080835885584424746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea2aa152e101054c977260ea0e37cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _starType: 0
+  _numPlanets: 0
+  _planets:
+  - {fileID: 919132149155446097, guid: ec2d4f17a02eb714290818d0f7c44bca, type: 3}
+  - {fileID: 919132149155446097, guid: ff0eb5608b1381e469e2eb2f6448b462, type: 3}
+  - {fileID: 919132149155446097, guid: e05b3d2606cd01c4ebbae53decea9d5a, type: 3}
+  - {fileID: 919132149155446097, guid: ff464a5096801ac4694e92b2ee56bcf2, type: 3}
+  - {fileID: 919132149155446097, guid: 7a8de410e6f66704282dc9b330400d4f, type: 3}
+  - {fileID: 919132149155446097, guid: 8a90c8a1bdac511469ac28a2bd8fcecd, type: 3}
+  - {fileID: 919132149155446097, guid: 997844ac6cff0ba4193f18fa3f75e2da, type: 3}
+  - {fileID: 919132149155446097, guid: c737360927250fd42a1ca790fad6a541, type: 3}
 --- !u!1 &7235779079671582346
 GameObject:
   m_ObjectHideFlags: 0

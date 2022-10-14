@@ -248,12 +248,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spaceObject: {fileID: 1080835885584424746, guid: 1997e53c6aa682240809252c94a58f58, type: 3}
   _ChargeRock: {fileID: 0}
+  _seed: 500
   scale: 0.025
-  _range: 50
+  _range: 100
   _spawnRate: 0.35
-  _lastPos: {x: 550.0512, y: 277.15164, z: -379.09818}
+  _lastPos: {x: 0, y: 0, z: 0}
   _chanceChargeRock: 0
   _timeToUpdate: 20
+  _rangeMultiplier: 20
 --- !u!4 &655622582
 Transform:
   m_ObjectHideFlags: 0
@@ -288,6 +290,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turnSpeed: 60
   _boostSpeed: 5
+--- !u!114 &1542545641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542545632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bba38f9b247de4a8f6a892a3faf381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLifePoints: 0
 --- !u!1001 &1857771417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 411532145, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
       propertyPath: far clip plane
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1857771420, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
       propertyPath: _velGiro
