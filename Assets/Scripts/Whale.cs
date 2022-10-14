@@ -12,6 +12,8 @@ public class Whale : MonoBehaviour
 
     #region References
     [Header("References")]
+    public Material _highStar;
+    public Material _lowStar;
     public List<GameObject> _lightsList = new List<GameObject>();
     private Controller _controller;
     #endregion
@@ -66,7 +68,7 @@ public class Whale : MonoBehaviour
     {
         foreach (GameObject light in _lightsList)
         {
-            light.gameObject.SetActive(false);
+            light.GetComponent<Renderer>().material = _lowStar;
         }
 
         float newTurnSpeed = 0f;
@@ -74,7 +76,7 @@ public class Whale : MonoBehaviour
 
         for (int i = 0; i < _currentLifePoints; i++)
         {
-            _lightsList[i].SetActive(true);
+            _lightsList[i].GetComponent<Renderer>().material = _highStar;
             newTurnSpeed += 10f;
             newBoostSpeed += 2f;
         }

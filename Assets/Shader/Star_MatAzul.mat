@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Star_Mat
+  m_Name: Star_MatAzul
   m_Shader: {fileID: -6465566751694194690, guid: 29095d1f1050ca4418c0a4116ab11351, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -71,8 +71,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _CellDensity: 21.7
-    - _CellSpeed: 1
+    - _CellDensity: 10.01
+    - _CellSpeed: 1.36
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -86,14 +86,14 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SmoothnessTextureChannel: 0
-    - _SolarFlare: 55.34
+    - _SolarFlare: 6.2
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.65318143, g: 0.12613158, b: 0, a: 1}
-    - _CellColor: {r: 1.7176471, g: 0.18039216, b: 0, a: 0}
+    - _BaseColor: {r: 0, g: 0.08627451, b: 0.1637255, a: 1}
+    - _CellColor: {r: 1.2980342, g: 1.2980342, b: 1.2980342, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -131,6 +131,12 @@ MonoBehaviour:
   - {fileID: 4931460843479523731}
   - {fileID: 6421823966453670634}
   - {fileID: 1927664862414521525}
+  _starMaterials:
+  - {fileID: 2100000, guid: d1b837d329b5f864b9be95b94b6b240a, type: 2}
+  - {fileID: 2100000, guid: 7f1ab74cd97e0c1498c5b1fab713c7b6, type: 2}
+  - {fileID: 2100000, guid: fa6062672d8e16044a6acfa8d65294d2, type: 2}
+  - {fileID: 2100000, guid: a546e9a4650a4c04b99287587c44b73a, type: 2}
+  - {fileID: 2100000, guid: 38ccb7f13b52874428ffdd8449b62647, type: 2}
 --- !u!54 &2503474133104535730
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -401,8 +407,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.68042916, b: 0.16509432, a: 1}
-  m_Intensity: 24.57
-  m_Range: 10
+  m_Intensity: 50
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

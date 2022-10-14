@@ -20,6 +20,7 @@ public class SolarSystem : SpaceObject
     [Header("References")]
     public List<GameObject> _planets  = new List<GameObject>();
     public List<GameObject> _planetPositions = new List<GameObject>();
+    public List<Material> _starMaterials = new List<Material>();
     System.Random _rng;
     #endregion
     // Start is called before the first frame update
@@ -37,8 +38,8 @@ public class SolarSystem : SpaceObject
     public void InitValues()
     {
         _numPlanets = _rng.Next(1, 5);
-        _starType = (StarType)_rng.Next(0,4);
-
+        _starType = (StarType)_rng.Next(0,5);
+        GetComponent<Renderer>().material = _starMaterials[(int)_starType];
         for (int i = 0; i < _numPlanets; i++)
         {
             int randomIndex = _rng.Next(0, _planets.Count);
