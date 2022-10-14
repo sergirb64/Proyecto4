@@ -246,12 +246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3a332322483034b9cf85b2f62ce4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _asteroid: {fileID: 4222609037213725881, guid: 05f1494a5a97a56458830a56dea20fcf, type: 3}
+  _spaceObject: {fileID: 1080835885584424746, guid: 1997e53c6aa682240809252c94a58f58, type: 3}
   _ChargeRock: {fileID: 0}
-  scale: 0.02
+  scale: 0.025
   _range: 50
-  _spawnRate: 0.467
-  _lastPos: {x: 0, y: 0, z: 0}
+  _spawnRate: 0.35
+  _lastPos: {x: 550.0512, y: 277.15164, z: -379.09818}
   _chanceChargeRock: 0
   _timeToUpdate: 20
 --- !u!4 &655622582

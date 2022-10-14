@@ -14,12 +14,12 @@ public class PerlinNoise : MonoBehaviour
 
     private GameObject _ship;
     [Header("References")]
-    public GameObject _asteroid;
+    public GameObject _spaceObject;
     public GameObject _ChargeRock;
 
     [Header("Game Parameters")]
     public float scale = 1.0F;
-    public float _range;
+    public int _range;
     public float _spawnRate;
     public Vector3 _lastPos;
     public float _chanceChargeRock;
@@ -37,10 +37,10 @@ public class PerlinNoise : MonoBehaviour
     {
         _nextUpdate = Time.realtimeSinceStartup + _timeToUpdate;
         _rng = new System.Random(005);
-        CalcNoise(true);
+        CalcNoise();
     }
 
-    private void CalcNoise(bool isStart)
+    private void CalcNoise()
     {
 
         //X LIMIT
@@ -53,30 +53,15 @@ public class PerlinNoise : MonoBehaviour
         float zLimitSup;
         float zLimitInf;
 
-        if (isStart)
-        {
-            //X LIMIT
-            xLimitSup = _ship.transform.position.x + _range;
-            xLimitInf = _ship.transform.position.x - _range;
-            //Y LIMIT
-            yLimitSup = _ship.transform.position.y + _range;
-            yLimitInf = _ship.transform.position.y - _range;
-            //Z LIMIT
-            zLimitSup = _ship.transform.position.z + _range;
-            zLimitInf = _ship.transform.position.z - _range;
-        }
-        else
-        {
-            //X LIMIT
-            xLimitSup = _ship.transform.position.x + _range;
-            xLimitInf = _ship.transform.position.x - _range;
-            //Y LIMIT
-            yLimitSup = _ship.transform.position.y + _range;
-            yLimitInf = _ship.transform.position.y - _range;
-            //Z LIMIT
-            zLimitSup = _ship.transform.position.z + _range;
-            zLimitInf = _ship.transform.position.z - _range;
-        }
+        //X LIMIT
+        xLimitSup = CalculateLimit((int)_ship.transform.position.x, true);
+        xLimitInf = CalculateLimit((int)_ship.transform.position.x, false);
+        //Y LIMIT
+        yLimitSup = CalculateLimit((int)_ship.transform.position.y, true);
+        yLimitInf = CalculateLimit((int)_ship.transform.position.y, false);
+        //Z LIMIT
+        zLimitSup = CalculateLimit((int)_ship.transform.position.z, true);
+        zLimitInf = CalculateLimit((int)_ship.transform.position.z, false);
 
         for (int x = (int)xLimitInf; x <= (int)xLimitSup; x += 10)
         {
@@ -84,12 +69,11 @@ public class PerlinNoise : MonoBehaviour
             {
                 for (int z = (int)zLimitInf; z <= (int)zLimitSup; z += 10)
                 {
-                    print("Hola!");
                     if (Perlin3D(x, y, z) <= _spawnRate)
                     {
                         GameObject newObject;
 
-                        newObject = Instantiate(_asteroid, transform);
+                        newObject = Instantiate(_spaceObject, transform);
                         newObject.transform.position = new Vector3(x, y, z);
                     }
                 }
@@ -98,15 +82,26 @@ public class PerlinNoise : MonoBehaviour
         _lastPos = _ship.transform.localPosition;
     }
 
-    bool isChargeRock()
+    private int CalculateLimit(int value, bool isAdd)
     {
-        bool result = false;
-        int chance = _rng.Next(1, 100);
-
-        if (_chanceChargeRock < chance)
-            result = true;
-
-        return result;
+        int limit = 0;
+        if (isAdd)
+        {
+            limit = value + _range;
+            while (limit % 10 != 0)
+            {
+                limit++;
+            }
+        }
+        else
+        {
+            limit = value - _range;
+            while (limit % 10 != 0)
+            {
+                limit--;
+            }
+        }
+        return limit;
     }
 
     public float Perlin3D(float x, float y, float z)
@@ -133,7 +128,7 @@ public class PerlinNoise : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || NeedUpdate())
         {
-            UpdateAsteroids();
+            UpdateSpace();
         }
     }
 
@@ -163,18 +158,18 @@ public class PerlinNoise : MonoBehaviour
         return result;
     }
 
-    void DestroyAllAsteroids()
+    void DestroyAllSpaceObjects()
     {
-        GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
+        GameObject[] asteroids = GameObject.FindGameObjectsWithTag("SpaceObject");
         foreach (GameObject currentAsteroid in asteroids)
         {
             Destroy(currentAsteroid);
         }
     }
 
-    void UpdateAsteroids()
+    void UpdateSpace()
     {
-        DestroyAllAsteroids();
-        CalcNoise(false);
+        DestroyAllSpaceObjects();
+        CalcNoise();
     }
 }
