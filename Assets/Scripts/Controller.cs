@@ -41,4 +41,23 @@ public class Controller : MonoBehaviour
         _transform.position += _transform.forward * _boostSpeed * Time.deltaTime;
     }
 
+    //GETTERS
+    public float GetTurnSpeed()
+    {
+        return _turnSpeed;
+    }
+    public float GetBoostSpeed()
+    {
+        return _boostSpeed;
+    }
+
+    //SETTERS
+    public void SetTurnSpeed(float newValue)
+    {
+        _turnSpeed = newValue;
+    }
+    public void SetboostSpeed(float newValue)
+    {
+        _boostSpeed = newValue;
+    }
 }
