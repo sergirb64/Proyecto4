@@ -42,12 +42,21 @@ public class Whale : MonoBehaviour
     public void LightDown()
     {
         _currentLifePoints--;
+        if( _currentLifePoints <= 0)
+        {
+            _currentLifePoints = 0;
+            print("Has perdido");
+        }
         UpdateLights();
     }
 
     public void LightUp()
     {
         _currentLifePoints++;
+        if( _currentLifePoints >= 6)
+        {
+            _currentLifePoints = _maxLifePoints;
+        }
         UpdateLights();
     }
 
@@ -60,6 +69,15 @@ public class Whale : MonoBehaviour
         for (int i = 0; i < _currentLifePoints; i++)
         {
             _lightsList[i].SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "SpaceObject")
+        {
+            print("Comido");
+            LightUp();
         }
     }
 }
