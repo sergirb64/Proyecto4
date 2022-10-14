@@ -6,9 +6,9 @@ public class TerrainFace {
 
     Mesh mesh;
     int resolution;
-    Vector3 localUp;
-    Vector3 axisA;
-    Vector3 axisB;
+    Vector3 localUp; //punto central del objeto
+    Vector3 axisA; //vértices en horizontal
+    Vector3 axisB; //vértices en vertical
 
     public TerrainFace(Mesh mesh, int resolution, Vector3 localUp)
     {
@@ -22,6 +22,7 @@ public class TerrainFace {
 
     public void ConstructMesh()
     {
+        //Cálculo de los vértices y triángulos del objeto
         Vector3[] vertices = new Vector3[resolution * resolution];
         int[] triangles = new int[(resolution - 1) * (resolution - 1) * 6];
         int triIndex = 0;
@@ -30,6 +31,7 @@ public class TerrainFace {
         {
             for (int x = 0; x < resolution; x++)
             {
+                //Creción de la figura que queremos "vertices[i] = figura";
                 int i = x + y * resolution;
                 Vector2 percent = new Vector2(x, y) / (resolution - 1);
                 Vector3 pointOnUnitCube = localUp + (percent.x - .5f) * 2 * axisA + (percent.y - .5f) * 2 * axisB;
@@ -38,10 +40,12 @@ public class TerrainFace {
 
                 if (x != resolution - 1 && y != resolution - 1)
                 {
+                    //Primera mitad de los triángulos
                     triangles[triIndex] = i;
                     triangles[triIndex + 1] = i + resolution + 1;
                     triangles[triIndex + 2] = i + resolution;
 
+                    //Segunda mitad de los triángulos
                     triangles[triIndex + 3] = i;
                     triangles[triIndex + 4] = i + 1;
                     triangles[triIndex + 5] = i + resolution + 1;
