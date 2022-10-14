@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _turnSpeed: 60
-  _boostSpeed: 45
+  _boostSpeed: 5
 --- !u!1001 &1857771417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -367,5 +367,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Whale Animated
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1857771420, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 546cc0e2d7f8f6e4787759e7f4ec89df, type: 3}
