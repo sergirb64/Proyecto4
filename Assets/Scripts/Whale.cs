@@ -13,11 +13,13 @@ public class Whale : MonoBehaviour
     #region References
     [Header("References")]
     public List<GameObject> _lightsList = new List<GameObject>();
+    private Controller _controller;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
+        _controller = GetComponent<Controller>();
         RestartLife();
     }
 
@@ -66,17 +68,25 @@ public class Whale : MonoBehaviour
         {
             light.gameObject.SetActive(false);
         }
+
+        float newTurnSpeed = 0f;
+        float newBoostSpeed = 0f;
+
         for (int i = 0; i < _currentLifePoints; i++)
         {
             _lightsList[i].SetActive(true);
+            newTurnSpeed += 10f;
+            newBoostSpeed += 2f;
         }
+
+        _controller.SetTurnSpeed(newTurnSpeed);
+        _controller.SetboostSpeed(newBoostSpeed);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "SpaceObject")
         {
-            print("Comido");
             LightUp();
         }
     }
