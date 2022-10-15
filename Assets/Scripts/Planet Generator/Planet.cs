@@ -7,6 +7,7 @@ public class Planet : MonoBehaviour
     [Range(2, 256)]
     public int resolution = 10;
     public bool autoUpdate = true;
+    //public enum FaceRenderMask { All, Top, Bottom, Left, Right, Front, Back};
 
     public ShapeSettings shapeSettings;
     public ColourSettings colourSettings;
@@ -47,6 +48,7 @@ public class Planet : MonoBehaviour
             }
 
             terrainFaces[i] = new TerrainFace(shapeGenerator, meshFilters[i].sharedMesh, resolution, directions[i]);
+            
         }
     }
 
