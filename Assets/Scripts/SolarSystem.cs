@@ -21,6 +21,7 @@ public class SolarSystem : SpaceObject
     public List<GameObject> _planets  = new List<GameObject>();
     public List<GameObject> _planetPositions = new List<GameObject>();
     public List<Material> _starMaterials = new List<Material>();
+    public GameObject _orbit;
     System.Random _rng;
     #endregion
     // Start is called before the first frame update
@@ -47,6 +48,13 @@ public class SolarSystem : SpaceObject
             newPlanet.transform.localScale = new Vector3(50, 50, 50);
             newPlanet.transform.position = _planetPositions[i].transform.position;
         }
+
+        float angx = _rng.Next(0, 360);
+        float angy = _rng.Next(0, 360);
+        float angz = _rng.Next(0, 360);
+
+        _orbit.transform.rotation = Quaternion.Euler(angx, angy, angz);
+
     }
 
     public void SetRng(System.Random value)
