@@ -36,8 +36,6 @@ public class PlanetEditor : Editor
             foldout = EditorGUILayout.InspectorTitlebar(foldout, settings);
             using (var check = new EditorGUI.ChangeCheckScope())
             {
-
-
                 if (foldout)
                 {
                     CreateCachedEditor(settings, null, ref editor);
